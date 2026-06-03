@@ -1,32 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
-import { Home, UserPlus, Bell, Briefcase } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Sidebar({ user }) {
-  const location = useLocation();
-
-  const navItems = [
-    {
-      name: "Home",
-      path: "/",
-      icon: Home,
-    },
-    {
-      name: "My Network",
-      path: "/network",
-      icon: UserPlus,
-    },
-    {
-      name: "Notifications",
-      path: "/notifications",
-      icon: Bell,
-    },
-    {
-      name: "My Applications",
-      path: "/applications",
-      icon: Briefcase,
-    },
-  ];
-
   return (
     <div className="bg-base-100 rounded-2xl shadow-sm border border-base-300 overflow-hidden sticky top-24">
       {/* Banner */}
@@ -73,41 +47,6 @@ export default function Sidebar({ user }) {
             {user.connections?.length || 0} Connections
           </span>
         </div>
-      </div>
-
-      {/* Navigation */}
-      <div className="border-t border-base-300 p-4">
-        <nav>
-          <ul className="space-y-1">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-
-              const isActive = location.pathname === item.path;
-
-              return (
-                <li key={item.name}>
-                  <Link
-                    to={item.path}
-                    className={`
-                      flex items-center gap-3
-                      px-4 py-3
-                      rounded-xl
-                      transition-all duration-200
-                      ${
-                        isActive
-                          ? "bg-primary/10 text-primary font-medium"
-                          : "text-base-content hover:bg-base-200 hover:text-primary"
-                      }
-                    `}
-                  >
-                    <Icon size={18} />
-                    <span>{item.name}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
       </div>
 
       {/* Profile CTA */}
