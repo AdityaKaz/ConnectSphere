@@ -39,11 +39,11 @@ const HomePage = () => {
         <div className="max-w-2xl mx-auto space-y-5">
           <PostCreation user={authUser} />
 
-          {posts?.map((post) => (
-            <Post key={post._id} post={post} />
-          ))}
+          {Array.isArray(posts)
+            ? posts.map((post) => <Post key={post._id} post={post} />)
+            : null}
 
-          {posts?.length === 0 && (
+          {(Array.isArray(posts) ? posts.length : 0) === 0 && (
             <div className="bg-base-100 rounded-2xl shadow-sm border border-base-300 p-10 text-center">
               <div className="mb-6">
                 <Users size={64} className="mx-auto text-primary" />
