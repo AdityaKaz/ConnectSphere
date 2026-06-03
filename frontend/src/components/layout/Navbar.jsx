@@ -44,9 +44,13 @@ const Navbar = () => {
   });
 
   const unreadNotificationCount =
-    notifications?.data?.filter((notif) => !notif.read).length || 0;
+    (Array.isArray(notifications?.data) ? notifications.data : []).filter(
+      (notif) => !notif.read,
+    ).length || 0;
 
-  const unreadConnectionRequestsCount = connectionRequests?.data?.length || 0;
+  const unreadConnectionRequestsCount =
+    (Array.isArray(connectionRequests?.data) ? connectionRequests.data : [])
+      .length || 0;
 
   const navClass = (path) =>
     `relative flex flex-col items-center px-3 py-2 rounded-xl transition-all duration-200
