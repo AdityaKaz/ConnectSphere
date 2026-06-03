@@ -141,7 +141,25 @@ CLOUDINARY_API_SECRET=
 
 ## Screenshots
 
-Add screenshots here.
+### Overview
+
+![ConnectSphere - Homepage](frontend/public/homepage.png)
+
+![ConnectSphere - Login](frontend/public/login.png)
+
+![ConnectSphere - Signup](frontend/public/signup.png)
+
+### Core Features
+
+![ConnectSphere - Network](frontend/public/network.png)
+
+![ConnectSphere - Jobs](frontend/public/jobs.png)
+
+![ConnectSphere - Messages](frontend/public/messages.png)
+
+![ConnectSphere - Notifications](frontend/public/notifications.png)
+
+![ConnectSphere - Profile](frontend/public/profile.png)
 
 ---
 
