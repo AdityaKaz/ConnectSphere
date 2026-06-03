@@ -10,6 +10,22 @@ A LinkedIn-inspired professional networking platform built using the MERN stack.
   - Sign up / Log in / Log out
   - Protected routes using JWT stored in an HTTP-only cookie
 
+---
+
+## Browser Compatibility Note
+
+This application uses secure HTTP-only cookies for authentication.
+
+The frontend is hosted on Vercel and the backend is hosted on Render. Since these are different domains, some browsers or privacy settings that block third-party cookies may prevent authentication from working correctly.
+
+If login or signup succeeds but the user is not authenticated afterward:
+
+- Allow third-party cookies for the site, or
+- Use a browser that permits cross-site authentication cookies, or
+- Deploy the frontend and backend under the same custom domain.
+
+The application has been tested successfully with browsers that allow the authentication cookie to be stored and sent.
+
 - **User Profile Management**
   - View profiles by username
   - Update personal details (profile page UI)

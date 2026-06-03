@@ -87,7 +87,12 @@ export const login = async (req, res) => {
 };
 
 export const logout = (req, res) => {
-  res.clearCookie("jwt-connectsphere");
+  res.clearCookie("jwt-connectsphere", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.COOKIE_SAMESITE || "strict",
+  });
+
   res.json({ message: "Logged out successfully" });
 };
 
